@@ -123,9 +123,9 @@ module.exports={
   * @description : the game continue upto, if player reached his goal,
   *               or he lost all his money or he lost his total number of times he want play.
   */
-    gamblerMethod: function()
+    gamblerMethod: function(stake,goal,noOfTimes)
     {
-        wins=0;
+        //wins=0;
         bets=0;
         win=0;
         loose=0;
@@ -143,14 +143,16 @@ module.exports={
             {
                 win++
             }
+            else
             {
                 loose++;
             }
-            console.log("No of Time Win="+win);
-            console.log("Percentage of win"+((win*100)/noOfTimes));
-            console.log("Percentage of loose"+((loose*100)/noOfTimes));
+            
 
         }
+        console.log("No of Time Win="+win);
+            console.log("Percentage of win"+((win*100)/noOfTimes));
+            console.log("Percentage of loose"+((loose*100)/noOfTimes));
 
     },
 /***************************Coupon Numbers***********************************/
@@ -227,7 +229,7 @@ module.exports={
                 {
                     if(arr[i]+arr[j]+arr[k]==0)
                     {
-                        console.log(i+" + "+j+" + "+k+" ");
+                        console.log(arr[i]+" + "+arr[j]+" + "+arr[k]+" ");
                     }
                 }
             }
@@ -386,38 +388,57 @@ module.exports={
      *@description :Take two string from user and compare those, and prints the message 
                     wheather they are anagram or not.
      */
-      checkAnagram: function(s1,s2) {
-        var status=true;
-        if(s1.length==s2.length)
-        {
-          for(let i=0;i<s1.length;i++)
-          {
-            for(let j=0;j<s2.length;j++)
-            {
-              if(s1.charAt(i)==s2.charAt(j))
-              {
-                status=true;
-                break;
-              }
+    checkAnagram(string1, string2){
+      string1=string1+"";
+      string2=string2+"";
+      //checking the length of the both string 
+      if (string1.length != string2.length){
+          return false;
+      }
+      //create an empty array
+      var arr = [];
+      for (let index = 0; index < 36; index++){
+          arr[index] = 0;
+      }
+          for (let index = 0; index < string1.length; index++){
+              var ch = string1.charAt(index);
+              if (ch >= 'a' && ch <= 'z') {
+                  var code = ch.charCodeAt(0);
+                  //converting into ascii value 
+                  arr[code - 97]++;
+                } 
+              else if (ch >= 'A' && ch <= 'Z'){
+                  var code = ch.charCodeAt(0);
+                  //converting into ascii value 
+                  arr[code - 65]++;
+              } 
               else{
-                status=false;
+                  var code = ch.charCodeAt(0);
+                  //converting into ascii value 
+                   arr[code - 22]++;
               }
-            }
+              ch = string2.charAt(index);
+              if (ch >= 'a' && ch <= 'z'){
+                  var code = ch.charCodeAt(0);
+                  arr[code - 97]--;
+              } 
+              else if (ch >= 'A' && ch <= 'Z'){
+                  var code = ch.charCodeAt(0);
+                  arr[code - 65]--;
+              } 
+              else{
+                  var code = ch.charCodeAt(0);
+                  arr[code - 22]--;
+              }
           }
-          
-        }
-        else
-          status=false;
-      
-        if(status)
-          {
-            console.log("String is Pallindrome");
+      //loop for comparing the ascii values
+      for (let index = 0; index < 36; index++){
+          if (arr[index] != 0){
+              return false;
           }
-          else {
-            console.log("String is not Pallindrome");
-          }
-      },
- 
+      }
+      return true;
+  }, 
  /*****************************Prime Numbers***************************/
 
     /* @Purpose   :To find prime numbers in between 0 t0 1000. */
@@ -458,9 +479,9 @@ module.exports={
 
       isAnagram(i)
       {
-        for(let j=0;j<1000;j++)
+        for(let j=2;j<1000;j++)
         {
-          for(let k=j+1;k<1000;k++)
+          for(let k=2;k<1000;k++)
           {
             if(this.anagram(k,j))
             {
@@ -668,7 +689,7 @@ payment(principle, year, rate){
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //dayOfWeek     
-    dayOfWeek(day, month, year) { 
+    dayOfWeek1(day, month, year) { 
         var y0 = year - Math.floor((14 - month) / 12);
         var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
         var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
@@ -711,7 +732,7 @@ sqrt(num){
       while (Math.abs(t - num / t) > epsilon * t){
           t = (num / t + t) / 2;
       }
-      console.log("Squre root of non negative number is : ", t)
+      console.log("Squre root of non negative number is : "+ t)
   }
   else{
       console.log("Number should be positive ");
@@ -733,9 +754,213 @@ tobin(num){
   return str;
 },
 //---------------------------------------------------------------------------------------------------------------------------//
-//Swap Nibble
+//Swap Nibbl
 
-    
+/*draw(){
+  var arr=[];
+  for(let i=1;i<=3;i++)
+  {
+    arr[i]=[];
+    for(let j=1;j<=3;j++)
+    {
+      arr[i][j]==-1;
+    }
+  }
+  for(let i=1;i<=3;i++)
+  {
+    for(let j=0;j<=3;j++)
+    {
+      console.log("|"+arr[i][j]+"|");
+    }
+  }
 
+
+
+},
+checkWin(){
+  if(arr[i][j]==)
+  
+},
+userTurn(){
+  var row=readline.question("Enter the Row:");
+  var column=readline.question("Enter the column:");
+  if(row>=3 && column>=3)
+  {
+    if(arr[i][j]==-1)
+    {
+      arr[row][column]=X;
+    }
+  }
+  if(checkWin())
+  {
+    console.log("You win");
+  }
+  else {
+    computerTurn();
+  }
+},
+computerTurn(){
+  var row=Math.random()*3;
+  var col=Math.random()*3;
+  
+  if(arr[row][col]==-1)
+  {
+    arr[row][col]=O;
+  }
+  else{
+    console.log("Enter valid row and column ");
+    this.computerTurn();
+  }
+
+  if(checkWin)
+  {
+    console.log("You loose");
+  }
+},
+
+ticTocToe()
+{
+  
+}
+*/    
+
+
+
+/************************************************************************************************************************
+  Data Structure Programs
+ ************************************************************************************************************************/
+isPrime(num) {
+  try {
+    if (num == 0 || num == 1)
+      return false;
+    for (let i = 2; i < num; i++) {
+      if (num % i == 0)
+        return false;
+    }
+    return true;
+  }
+  catch (e) {
+    console.log(e.message);
+  }
+},
+
+/*******************************Calender.js***************************** */
+dayOfWeek(month,year) {
+  var y = parseInt(year);
+  var m = parseInt(month);
+  var d = parseInt(1);
+  var day;
+  var y0 = y - Math.floor((14 - m) / 12);
+  var x = y0 + Math.floor(y0 / 4) - Math.floor(y0 / 100) + Math.floor(y0 / 400);
+  var m0 = m + 12 * Math.floor((14 - m) / 12) - 2;
+  var d0 = (d + x + Math.floor(31 * m0 / 12)) % 7;
+  d0 = parseInt(d0);
+  switch (d0) {
+      case 0:
+
+          day = 0;
+
+          break;
+      case 1:
+
+          day = 1;
+          break;
+      case 2:
+
+          day = 2;
+          break;
+      case 3:
+
+          day = 3
+          break;
+      case 4:
+
+          day = 4;
+          break;
+      case 5:
+
+          day = 5
+          break;
+      case 6:
+
+          day = 6;
+  }
+
+  return day;
+
+},
+
+
+
+display(month, day, year) {
+ 
+  if (month == 2) {
+      feb
+      if ((year % 4 == 0)&&(year % 100 != 0) || (year % 400 == 0)) {
+          var feb = 29;
+      } else {
+          feb = 28;
+      }
+  }
+
+
+
+  var monthNames = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var dayNames = ["S ", "M ", "T ", "W ", "Th ", "F ", "S "];
+
+  var dayPerMonth = ["", "31", "" + feb + "", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"];
+
+  var mon = new Array(7);
+
+  for (var i = 0; i <= 7; i++) {
+      mon[i] = new Array(7);
+  }
+  var weekdays = day;
+
+  for (i = 0; i < 7; i++) {
+      for (j = 0; j < 7; j++) {
+          mon[i][j] = 0
+      }
+  }
+  for (var i = 0; i <= month; i++) {
+      if (month == i)
+          console.log(monthNames[i])
+      var nd = dayPerMonth[i]
+  }
+
+  console.log('Number of days in month:- ', nd);
+
+  console.log(dayNames.toString(''));
+  var count = 0;
+  var j = 0;
+  var days = day - 1
+  var max = nd;
+
+  var min = 1;
+  for (i = 0; i < 7; i++) {
+      for (j =0; j < 7; j++) {
+
+          {
+              if (min <= max)
+                  if (i == 0 && j <= days)
+                      mon[i][j] = "  ";
+                  else {
+
+                      mon[i][j] = min;
+                      min += 1
+                  }
+          }
+      }
+  }
+  for (i = 0; i < 6; i++) {
+      for (j = 0; j < 7; j++) {
+      
+          console.log(mon[i][j] + " ");
+      }
+      console.log();
+  }
+
+}
+/***************************** */
 
 }
