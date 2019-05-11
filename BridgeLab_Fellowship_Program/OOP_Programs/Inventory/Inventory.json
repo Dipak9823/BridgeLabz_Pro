@@ -1,0 +1,55 @@
+{
+    "Rice" : [
+        {
+            "rice_name" : "Basamati",
+            "weight"    : "50",
+            "price"     : "60"
+        },
+        {
+            "rice_name" : "Sona Masuri",
+            "weight"    : "50",
+            "price"     : "40"
+        },
+        {
+            "rice_name" : "Ranjit Rice",
+            "weight"    :  "40",
+            "price"     :  "30"
+        }
+    ],
+    "Pulses" : [
+        {
+            "pulse_name": "Peas",
+            "wieght"    : "10",
+            "price"     : "20"
+        },
+        {
+            "pulses-name": "Black_Gram",
+            "weight"     : "25",
+            "price"      : "40"
+        },
+        {
+            "pulses-name":"Pigeon_Peas",
+            "weight"     : "23",
+            "price"      : "10"
+        }
+
+    ],
+
+    "Wheats" : [
+        {
+            "wheat_name": "Abc",
+            "wieght"    : "10",
+            "price"     : "30"
+        },
+        {
+            "wheat-name" : "xyz",
+            "weight"     : "15",
+            "price"      : "60"
+        },
+        {
+            "wheat-name" : "pqr",
+            "weight"     : "25",
+            "price"      : "70"
+        }
+    ]
+}
