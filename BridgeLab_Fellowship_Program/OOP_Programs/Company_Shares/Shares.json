@@ -1,0 +1,21 @@
+{
+    "company" : [
+        {
+            "name"      : "Mahindra",
+            "shares"    : "200",
+            "price"     : "1500"
+        },
+
+        {
+            "name"      : "Infosys",
+            "shares"    : "150",
+            "price"     : "500"
+        },
+        {
+            "name"      : "Capgemini",
+            "shares"    : "40",
+            "price"     : "300"
+        }
+    
+    ]
+}

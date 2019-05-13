@@ -1,0 +1,67 @@
+{
+    "Doctors" : [
+        {
+            "name"            :   "Dr. Dipak Patil",
+            "Id"              :   "007",
+            "Specialization"  :   "NeuroLogist",
+            "Avaibality"      :   "Pm",
+            "OnDay"           :   "10"     
+        },
+        {
+            "name"            :   "Dr. Harshal Thakur",
+            "Id"              :   "123",
+            "Specialization"  :   "CardioLogist",
+            "Avaibality"      :   "Am",
+            "OnDay"           :   "9"     
+        },
+        {
+            "name"            :   "Dr. Bhushan Salunkhe",
+            "Id"              :   "111",
+            "Specialization"  :   "Psychiatrist",
+            "Avaibality"      :   "Pm",
+            "OnDay"           :   "11"     
+        },
+        {
+            "name"            :   "Dr. Kundan Patil",
+            "Id"              :   "741",
+            "Specialization"  :   "Pediatrician",
+            "Avaibality"      :   "Am",
+            "OnDay"           :   "4"     
+        }
+
+
+    ],
+    "Patient" : [
+        {
+            "name"            :   "ABC",
+            "Id"              :   "1",
+            "Mobile_No"       :   "9823556655",
+            "Age"             :   "20"   
+        },
+        {
+            "name"            :   "XYZ",
+            "Id"              :   "2",
+            "Mobile_No"       :   "7545788956",
+            "Age"             :   "22"   
+        },
+        {
+            "name"            :   "PQR",
+            "Id"              :   "3",
+            "Mobile_No"       :   "9823556655",
+            "Age"             :   "23"   
+        },
+        {
+            "name"            :   "LMN",
+            "Id"              :   "4",
+            "Mobile_No"       :   "4512474545",
+            "Age"             :   "24"   
+        },
+        {
+            "name"            :   "ASD",
+            "Id"              :   "5",
+            "Mobile_No"       :   "7845128956",
+            "Age"             :   "25"   
+        }
+
+    ]
+}

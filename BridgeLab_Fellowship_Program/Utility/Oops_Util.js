@@ -1,4 +1,4 @@
-
+var readline=require("readline-sync");
 
 module.exports={
     invent(obj) {
@@ -42,7 +42,54 @@ module.exports={
             console.log("\n");
             console.log("Stock_name:- "+s[key].Stock_name+"  Total Price:- "+s[key].No_Of_stock*s[key].Price);
         }
+    },
+
+    shuffle(cards) {
+        var shuffleCards=new Array();
+        var n=cards.length;
+        var k=0;
+        var status=true;
+        var randomCard=Math.floor(Math.random()*n);
+        shuffleCards[0]=cards[randomCard];
+        while(k<n) {
+            var randomCard=Math.floor(Math.random()*n);
+            for(let index=0;index<cards.length;index++) {
+                if(shuffleCards[index]==cards[randomCard]) {
+                    status=true;
+                }
+                else {
+                    status=false;
+                }
+            }
+            if(!status) {
+                shuffleCards.push(cards[randomCard]);
+                k++;
+            }        
+        }
+        console.log(shuffleCards);
+        this.distribute(shuffleCards);
+    },
+    distribute(shuffleCards) {
+        console.log("Enter the name of the player:-");
+        var player=[];
+        for(let i=0;i<4;i++) {
+            player[i]=readline.question("Enter the "+i+" Player:-");
+
+        }
+        var range=9;
+        var j=0;
+        for(let i=0;i<4;i++) {
+            console.log(player[i]+" Cards Are:-");
+            while(j<range) {
+                console.log(shuffleCards[j]);
+                j++;
+            }
+            range +=9;
+        }
+
+
     }
+
     
 
 }
