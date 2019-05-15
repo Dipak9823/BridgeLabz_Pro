@@ -461,7 +461,7 @@ module.exports={
 /********************Prime Numbers that are Anagram and palindrom**************************/
 
     /* @Purpose: to check prime numbers that are anagram and palindrom*/
-      isPallindrome(i){
+      /*isPallindrome(i){
         var n=i;
         var reverse;
         while(n>0)
@@ -543,7 +543,7 @@ module.exports={
         {
           console.log("Invalid Choice");
         }
-      },
+      },*/
 /******************************Binary Search *********************************/
 
     /* @Purpose : to find the key index by using binary search*/

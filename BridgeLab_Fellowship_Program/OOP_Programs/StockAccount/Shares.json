@@ -1,0 +1,39 @@
+{
+    "company" : [
+        {
+            "name"      : "Mahindra",
+            "shares"    : "200",
+            "price"     : "1500"
+        },
+
+        {
+            "name"      : "Infosys",
+            "shares"    : "150",
+            "price"     : "500"
+        },
+        {
+            "name"      : "Capgemini",
+            "shares"    : "40",
+            "price"     : "300"
+        }
+    
+    ],
+    "Customer" : [
+        {
+            "name"      : "Dipak Patil",
+            "id"        : "123",
+            "shares"    : "40",
+            "amount"    : "45000",
+            "price"     : "5000"
+        },
+        {
+            "name"      : "Bhushan Salunkhe",
+            "id"        : "153",
+            "shares"    : "45",
+            "amount"    : "12000",
+            "price"     : "500"  
+        }
+
+
+    ]
+}

@@ -1,5 +1,6 @@
 var readline=require("readline-sync");
 var util=require("../Utility/Oops_Util");
+function DeckCards(){
 var  suit=["clubs","Diamonds","Hearts","spades"];
 var rank=["2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"];
 
@@ -14,4 +15,8 @@ for(let i=0;i<suit.length;i++) {
 console.log(cards);
 
 util.shuffle(cards);
+return cards;
+} 
+//DeckCards();
+module.exports=DeckCards();
 

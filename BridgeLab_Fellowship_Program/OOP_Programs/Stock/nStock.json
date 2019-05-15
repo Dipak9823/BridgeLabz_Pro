@@ -2,18 +2,18 @@
     "stock" : [
                 {
                     "Stock_name"    :   "s1",
-                    "No_Of_stock"   :   "20",
-                    "Price"         :   "200"
+                    "No_Of_stock"   :   20,
+                    "Price"         :   200
                 },
                 {
                     "Stock_name"    :   "s2",
-                    "No_Of_stock"   :   "30",
-                    "Price"         :   "400"
+                    "No_Of_stock"   :   30,
+                    "Price"         :   400
                 },
                 {
                     "Stock_name"    :   "s3",
-                    "No_Of_stock"   :   "50",
-                    "Price"         :   "600" 
+                    "No_Of_stock"   :   50,
+                    "Price"         :   600 
                 }
     ]
 
