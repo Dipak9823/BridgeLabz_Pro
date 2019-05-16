@@ -1,7 +1,7 @@
 var filestream=require("fs");
 var util=require("../../../Utility/Oops_Util")
 var assert=require("chai").assert;
-var content=filestream.readFileSync("/home/admin123/Dipak/BridgeLabz_Pro-master/BridgeLab_Fellowship_Program/OOP_Programs/Company_Shares/Shares.json");
+var content=filestream.readFileSync("/home/user/Dipak/BridgeLabz_Pro-master/BridgeLab_Fellowship_Program/OOP_Programs/Company_Shares/Shares.json");
 var data=JSON.parse(content);
 //var company=data.company;
 describe("Check Object",function(){

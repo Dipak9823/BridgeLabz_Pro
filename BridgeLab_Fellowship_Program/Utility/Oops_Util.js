@@ -25,11 +25,15 @@ module.exports={
     },
     regexExpression(name, fullname, mob_number, date) {
         var filestream=require('fs');
+        /* Read content from file*/
         var content=filestream.readFileSync("/home/admin123/Dipak/BridgeLabz_Pro-master/BridgeLab_Fellowship_Program/OOP_Programs/RegularExpression/regular.txt",'utf-8');
-
+        /*Replace <<name>> with name*/
         content=content.replace(/<<name>>/,name);
+        /*Replace <<full name>> with fullname*/
         content=content.replace(/<<full name>>/,fullname);
+        /*Replace "xxxxxxxxx" with mob_number*/
         content=content.replace("xxxxxxxxxx",mob_number);
+        /*Replace Date */
         content=content.replace("01/01/2016",date);
 
         return content;
@@ -38,7 +42,7 @@ module.exports={
 
     stock(object) {
         var s=object.stock;
-
+        /*Calculate All The Shares and Print*/
         for(var key in s) {
             console.log("\n");
             console.log("Stock_name:- "+s[key].Stock_name+"  Total Price:- "+s[key].No_Of_stock*s[key].Price);
@@ -48,15 +52,18 @@ module.exports={
     },
 
     shuffle(cards) {
+
         var shuffleCards=new Array();
         //var n=cards.length;
         var k=0;
         var status=true;
         var randomCard=Math.floor(Math.random()*cards.length);
+        /*Enter First Random into Array*/
         shuffleCards[0]=cards[randomCard];
         while(k<cards.length) {
             var randomCard=Math.floor(Math.random()*cards.length);
             for(let index=0;index<cards.length;index++) {
+                /*Compare all the array element with random to avoid Duplicates*/
                 if(shuffleCards[index]==cards[randomCard]) {
                     status=true;
                 }
@@ -65,6 +72,7 @@ module.exports={
                 }
             }
             if(!status) {
+                /*Add Into the Array*/
                 shuffleCards.push(cards[randomCard]);
                 k++;
             }        
@@ -76,12 +84,14 @@ module.exports={
     distribute(shuffleCards) {
         console.log("Enter the name of the player:-");
         var player=[];
+        /* Read four player who want to play Game*/
         for(let i=0;i<4;i++) {
             player[i]=readline.question("Enter the "+i+" Player:-");
 
         }
         var range=9;
         var j=0;
+        /*Distribute 9 Cards per Player*/
         for(let i=0;i<4;i++) {
             console.log(player[i]+" Cards Are:-");
             while(j<range) {
@@ -97,6 +107,7 @@ module.exports={
     clinicManagement(data) {
         var doctor=data.Doctors;
         var patient=data.Patient;
+        /*Enter A choice To Find a Doctor*/
         while(choice!=4) {
         console.log("Enter Follwing Number To Find Doctor");
         console.log("1. Enter the name of Doctor:-");
@@ -159,6 +170,7 @@ module.exports={
     
     }
 }
+    /*Enter Your Choice and Search Patient*/
     while(choice!=4) {
         console.log("Enter Follwing Choice To Find Patient");
         console.log("1. Enter the name of Patient:-");
@@ -226,6 +238,7 @@ module.exports={
     
 
     },
+    /* Take Appointment Of Doctor*/
     appointment(data) {
         var doctor=data.Doctors;
         var patient=data.Patient;

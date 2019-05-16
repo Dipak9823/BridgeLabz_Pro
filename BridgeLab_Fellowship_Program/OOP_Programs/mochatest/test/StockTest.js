@@ -1,7 +1,7 @@
 var filestream=require("fs");
 var assert=require("chai").assert;
 var util=require("../../../Utility/Oops_Util").stock;
-var content=filestream.readFileSync("/home/admin123/Dipak/BridgeLabz_Pro-master/BridgeLab_Fellowship_Program/OOP_Programs/Stock/nStock.json");
+var content=filestream.readFileSync("/home/user/Dipak/BridgeLabz_Pro-master/BridgeLab_Fellowship_Program/OOP_Programs/Stock/nStock.json");
 var data=JSON.parse(content);
 
 describe("Check return",function(){
